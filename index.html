@@ -5,23 +5,27 @@
 		<title>DISI | EDMS</title>
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
  	</head>
-	<body onload="loadingIcon()">
-
-		<div id="loading">
-			<table align="center">
-				<tr>
-					<td>
-						<div class="loadingio ">
-							<div class="ldio">
-								<div></div>
-								<div></div>
-								<div></div> 
-							</div>
-						</div>   
-					</td>
-				</tr>
-			</table>
-		</div>
+	<body>
+		   <!-- Start preloading -->
+		   <div id="loading" class="loading-invisible">
+			<div class="loading-center">
+			  <div class="loading-center-absolute">
+				<div class="object" id="object_four"></div>
+				<div class="object" id="object_three"></div>
+				<div class="object" id="object_two"></div>
+				<div class="object" id="object_one"></div>
+			  </div>
+			  <p>Loading...</p>
+			</div>
+		  </div>
+		  <script type="text/javascript">
+			document.getElementById("loading").className = "loading-visible";
+			var hideDiv = function(){document.getElementById("loading").className = "loading-invisible";};
+			var oldLoad = window.onload;
+			var newLoad = oldLoad ? function(){hideDiv.call(this);oldLoad.call(this);} : hideDiv;
+			window.onload = newLoad;
+		  </script>
+		  <!-- End preloading -->
 		 
 		<section id="content">
 			<div class="header">
@@ -53,166 +57,10 @@
 			<div class="element1"></div>
 			<div class="element2"></div>
 		</section>
-
-
-		<!-- <style>
-			body {font-family: Arial, Helvetica, sans-serif;}
-			
-			/* Full-width input fields */
-			input[type=text], input[type=password] {
-			  width: 100%;
-			  padding: 12px 20px;
-			  margin: 8px 0;
-			  display: inline-block;
-			  border: 1px solid #ccc;
-			  box-sizing: border-box;
-			}
-			
-			/* Set a style for all buttons */
-			button {
-			  background-color: #04AA6D;
-			  color: white;
-			  padding: 14px 20px;
-			  margin: 8px 0;
-			  border: none;
-			  cursor: pointer;
-			  width: 100%;
-			}
-			
-			button:hover {
-			  opacity: 0.8;
-			}
-			
-			/* Extra styles for the cancel button */
-			.cancelbtn {
-			  width: auto;
-			  padding: 10px 18px;
-			  background-color: #f44336;
-			}
-			
-			/* Center the image and position the close button */
-			.imgcontainer {
-			  text-align: center;
-			  margin: 24px 0 12px 0;
-			  position: relative;
-			}
-			
-			img.avatar {
-			  width: 40%;
-			  border-radius: 50%;
-			}
-			
-			.container {
-			  padding: 16px;
-			}
-			
-			span.psw {
-			  float: right;
-			  padding-top: 16px;
-			}
-			
-			/* The Modal (background) */
-			.modal {
-			  display: none; /* Hidden by default */
-			  position: fixed; /* Stay in place */
-			  z-index: 1; /* Sit on top */
-			  left: 0;
-			  top: 0;
-			  max-width: 100%; /* Full width */
-			  max-height: 100%; /* Full height */
-			  overflow: auto; /* Enable scroll if needed */
-			  /* background-color: rgb(0,0,0); Fallback color */
-			  /* background-color: rgba(0,0,0,0.4); Black w/ opacity */
-			  padding-top: 60px;
-			 
-  
-			}
-			
-			/* Modal Content/Box */
-			.modal-content {
-			  background-color: #fefefe;
-			  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-			  border: 1px solid #888;
-			  width: 80%; /* Could be more or less, depending on screen size */
-			}
-			
-			/* The Close Button (x) */
-			.close {
-			  position: absolute;
-			  right: 25px;
-			  top: 0;
-			  color: #000;
-			  font-size: 35px;
-			  font-weight: bold;
-			}
-			
-			.close:hover,
-			.close:focus {
-			  color: red;
-			  cursor: pointer;
-			}
-			
-			/* Add Zoom Animation */
-			.animate {
-			  -webkit-animation: animatezoom 0.6s;
-			  animation: animatezoom 0.6s
-			}
-			
-			
-			@-webkit-keyframes animatezoom {
-			  from {-webkit-transform: scale(0)} 
-			  to {-webkit-transform: scale(1)}
-			}
-			  
-			@keyframes animatezoom {
-			  from {transform: scale(0)} 
-			  to {transform: scale(1)}
-			}
-			
-			/* Change styles for span and cancel button on extra small screens */
-			@media screen and (max-width: 300px) {
-			  span.psw {
-				 display: block;
-				 float: none;
-			  }
-			  .cancelbtn {
-				 width: 100%;
-			  }
-			}
-			</style> -->
+ 
 			</head>
 			<body>
-			
-			<!-- <div id="id01" class="modal" >
-			  
-			  <form class="modal-content animate" action="/pages/dashboard1.html" method="post">
-				<div class="imgcontainer">
-				  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-				  <h1 style="text-align: center; margin-bottom:2px; "><img src="/assets/images/edms-removebg-preview.png" alt="EDMS Logo" width="90px" height="90px">
-				  </div>
-			
-				<div class="container">
-				  <label for="uname"><b>Username</b></label>
-				  <input type="text" placeholder="Enter Username" name="uname" required>
-			
-				  <label for="psw"><b>Password</b></label>
-				  <input type="password" placeholder="Enter Password" name="psw" required>
-					
-				  <button type="submit">Login</button>
-				  <label>
-					<input type="checkbox" checked="checked" name="remember"> Remember me
-				  </label>
-				</div>
-			
-				<div class="container" style="background-color:#f1f1f1">
-				  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-				  <span class="psw">Forgot <a href="#">password?</a></span>
-				</div>
-			  </form>
-			</div> -->
-			
- 
-
+		 
 
 <style>
     @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap');
@@ -220,69 +68,120 @@
 
 /*Loading effect styles===================================================================*/
 
-#content {
-    display: none;
+/*
+Preloading
+=========================== */
+div.loading-invisible{
+    display:none;
 }
-#loading {
-    display: block;
-    position: absolute;
-    top: 30%;
-    left: 40%;
-    z-index: 50000;
+
+#loading{
+	background:#bfe79a;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index:9999999;
+	margin-top: 0px;
+	top: 0px;
+	color:#787878;
+	text-align:center;
+	font-size:18px;
+	letter-spacing:4px;
+}
+
+.loading-center{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.loading-center-absolute {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 200px;
+	width: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	-ms-transform: rotate(-135deg); 
+   	-webkit-transform: rotate(-135deg); 
+    transform: rotate(-135deg);
+
+}
+
+.object{
+	-moz-border-radius: 50% 50% 50% 50%;
+	-webkit-border-radius: 50% 50% 50% 50%;
+	border-radius: 50% 50% 50% 50%;
+	position: absolute;
+	border-top: 5px solid #333;
+	border-bottom: 5px solid transparent;
+	border-left:  5px solid #ddd;
+	border-right: 5px solid transparent;
+	-webkit-animation: animate 2s infinite;
+	animation: animate 2s infinite;	
+}
+
+#object_one{
+	left: 75px;
+	top: 75px;
+	width: 50px;
+	height: 50px;
+}
+							
+#object_two{
+	left: 65px;
+	top: 65px;
+	width: 70px;
+	height: 70px;
+	-webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+#object_three{
+	left: 55px;
+	top: 55px;
+	width: 90px;
+	height: 90px;
+	-webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+	
+#object_four{
+	left: 45px;
+	top: 45px;
+	width: 110px;
+	height: 110px;
+	-webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}	
+
+@-webkit-keyframes animate {
+	50% {
+
+		-ms-transform: rotate(360deg) scale(0.8); 
+		-webkit-transform: rotate(360deg) scale(0.8); 
+		transform: rotate(360deg) scale(0.8); 
+	  }
+}
+
+@keyframes animate {
+	50% {
+
+		-ms-transform: rotate(360deg) scale(0.8); 
+		-webkit-transform: rotate(360deg) scale(0.8); 
+		transform: rotate(360deg) scale(0.8); 
+	  }
+}
+
+.loading-center p{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: 90px;
+	margin-left: -79px;	
 }
  
-.ldio {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform: translateZ(0) scale(1);
-  backface-visibility: hidden;
-  transform-origin: 0 0; 
-}
-.ldio div {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  top: 60px;
-  left: 20px;
-}
-.ldio div:nth-child(1) {
-  background: #ee4949;
-  animation: ldio 1s linear infinite;
-  animation-delay: -0.5s;
-}
-.ldio div:nth-child(2) {
-  background: #0f0d0d6e;
-  animation: ldio  1s linear infinite;
-  animation-delay: 0s;
-}
-.ldio  div:nth-child(3) {
-  background: #ee4949;
-  animation: ldio-1l6lp7zdq37-o 1s linear infinite;
-  animation-delay: -0.5s;
-}
-.loading{
-  width: 200px;
-  height: 200px;
-  display: inline-block;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0);
-}
-.ldio div { 
-    box-sizing: content-box; 
-}
-@keyframes ldio-1l6lp7zdq37-o {
-    0%    { opacity: 1; transform: translate(0 0) }
-   49.99% { opacity: 1; transform: translate(80px,0) }
-   50%    { opacity: 0; transform: translate(80px,0) }
-  100%    { opacity: 0; transform: translate(0,0) }
-}
-@keyframes ldio {
-    0% { transform: translate(0,0) }
-   50% { transform: translate(80px,0) }
-  100% { transform: translate(0,0) }
-}
 
 /*Main body styles==================================================================*/
 
@@ -292,7 +191,7 @@ body
 	padding: 0;
 	min-height: 100vh;
 	font-family: 'PT Sans Narrow', sans-serif;
-    background-color: rgb(241, 245, 241)
+    background-color: #bfe79a;
 
 }
 
@@ -301,7 +200,7 @@ section
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: rgb(241, 245, 241);
+	background: #bfe79a;
 	display: grid;
 	justify-content: center;
 	align-items: center;
@@ -314,10 +213,12 @@ section
 	left: 10%;
 	transform: translateY(-50%);
 	max-width: 650px;
+
 }
 .bannerText h2,
 .bannerText h3
 {
+	color:#131212be;
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -344,7 +245,7 @@ section
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #000;
+	background: #355B11;
 	width: 100%;
 	height: 100%;
 	transform-origin: right;
@@ -402,7 +303,7 @@ section
 	display: inline-block;
 	margin: 20px 0 0;
 	padding: 10px 20px;
-	background: #000;
+	background: #355B11;
 	color: #fff;
 	font-weight: 700;
 	text-decoration: none;
@@ -437,15 +338,7 @@ section
     max-width: 45%;
     background-color:transparent;
 }
-.login-button a {
-     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
- 
+  
  
 .header
 {
@@ -520,7 +413,7 @@ section
 	right: 40%;
 	width: 250px;
 	height: 250px;
-	border: 40px solid #000;
+	border: 40px solid #355B11;
 	animation: rotate 40s linear infinite, fadeIn 1s linear forwards;
 	animation-delay: 1s;
 }
@@ -532,7 +425,7 @@ section
 	top: 40%;
 	width: 50px;
 	height: 50px;
-	border: 2px solid #000;
+	border: 2px solid #355B11;
 	animation: rotate 30s linear infinite, fadeIn 1s linear forwards;
 	animation-delay: 1s;
 }

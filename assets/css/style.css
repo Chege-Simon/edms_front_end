@@ -2,7 +2,7 @@
 
  :root{
   --header-height: 3rem;
-  --nav-width: 68px;
+  --nav-width: 123px;
   --bar-width: 100px;
 
 
@@ -17,7 +17,7 @@
    --body-font: 'Nunito', sans-serif;
   --normal-font-size: 1rem;
   
-   --z-fixed: 100;
+   --z-fixed: 10;
 }
 
  *,::before,::after{
@@ -94,28 +94,42 @@ a{
   overflow: hidden;
 }
 
-.menu-logo, .nav-list{
+/* .menu-logo{
   display: grid;
   grid-template-columns: max-content max-content;
   align-items: center;
   gap: 1rem;
   padding: .5rem 0 .5rem 1.5rem;
-}
+} */
 
 .menu-logo{
   margin-bottom: 1rem;
   padding: 15px;
   overflow: hidden;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+
 }
 
 .menu-logo-img {
   width:50px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px;
+  top: 5px;
+  position: absolute;
+  left: 26%;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .menu-logo-nome{
   color: var(--first-color-light);
   font-weight: 700;
   word-wrap: unset;
+  top: 25px;
 }
 
 .nav-list{
@@ -123,9 +137,11 @@ a{
   color: var(--first-color-light);
   margin-bottom: 1.5rem;
   transition: .3s;
-  border-radius: 85rem;
-  left: 2px;
-  width: 200px;
+  border-radius: 6px;
+  left: 12px;
+  width: 100px;
+  align-items: center;
+  padding: 5px;
 }
 
 .nav-list:hover{

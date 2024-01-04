@@ -1,164 +1,177 @@
- <!DOCTYPE html>
-<html lang="eng">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+      <link rel="stylesheet" href="../assets/css/mainStyle.css">
+
+	  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+	  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="abs w50 main-sidebar sidebar-light-indigo elevation-4" style="padding:10px;font-weight:bold;width: 7%;font-size:12px">
+    <!-- Brand Logo -->
+    <center>
+	    <a href="mainPage.php" >
+	      <img src="dist/img/DISI LOGO 2.png" alt="Company Logo" class=" img-circle elevation-3" style="opacity: .8;padding:7%" width="50px" height="50px">
+	    </a><br>
+    <div class="font-weight-bold" style="margin-top:10px">DISI EDMS</div>
+    </center>
+    <hr>
+    <div class="" style="padding-bottom:2px;">
+        <input class="g" name="sidebar_tab1" value="0" type="radio" checked="1" />
         
-
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-         
-    <link rel="stylesheet" href="/assets/css/style.css">
-
-        <title>Dashboard</title>
-    </head>
-    <body id="corpo-site">
-
-
-        
-        
-
-        <!-- start header section -->
-        <header class="menu-superior" id="menu-superior">
-            <div class="btn-menu">
-                <i class='bx bx-menu' id="btn-menu"></i>
-            </div>
-            <div class="breadcrumbClass">
-                <p> Dashboard </p>
-                </div>
-            </header>
-            <!-- end header section -->
-
-            
-            <div class="breadcrumb">
-                
-                 <a href="#" class="nav-list2"><i class='bx bx-plus icon'></i>
-                 <span>New</span>
-                </a> 
-                 
-                 
-                    <a href="#" class="nav-list2"> <i class='bx bx-search-alt-2 icon' ></i></i>
-                    <span>Search</span>
-                   </a> 
-                    
-                    
-                    <a href="#" class="nav-list2" onclick="toggleSidebar()">  <i class='bx bx-image-alt icon'></i></i></i>
-                    <span>Thumbnails</span>
-                   </a> 
-                    
-                    
-                    <a href="#" class="nav-list2">   <i class='bx bx-list-check icon' ></i>
-                    <span>List View</span>
-                   </a> 
-                    
-                   <a href="#" class="nav-list2" onclick="toggleSidebar2()"> <i class='bx bxs-bar-chart-alt-2 icon'></i>
-                    <span>Reports</span>
-                </a>
-
-                <a href="#" class="nav-list2"><i class='bx bx-cog icon' ></i>
-                    <span>Properties</span>
-                </a>
-                </div>
-
-        
-
-        <!-- start sidebar setion -->
-        <div class="menu-lateral" id="menu-lateral">
-            <div>
-                <a href="#" class="menu-logo">
-                    <img src="/assets/images/d.jpg" class="menu-logo-img">
-                    <span class="menu-logo-nome">DISI EDMS</span>
-                </a>
-
-                <div>
-            <nav class="nav">
-               
-                        <a href="#" class="nav-list active" title="Dashboard" >
-                             <i class='bx bxs-dashboard nav-icon'></i>
-                            <span>Dashboard</span>
-                        </a>
-
-                        <a href="#" class="nav-list" title="Repository">
-                         <i class='bx bx-cylinder nav-icon'></i>
-                            <span>Repository</span>
-                        </a>
-
-                        <a href="#" class="nav-list" title="Recently Viewed">
-                             <i class='bx bx-low-vision nav-icon'></i>
-                            <span>Recently Viewed</span>
-                        </a>
-                        
-                        <a href="#" class="nav-list" title="Bookmarks">
-                             <i class='bx bx-label nav-icon'></i>
-                            <span>Bookmarks</span>
-                        </a>
-
-                        <a href="#" class="nav-list" title="Saved Searches">
-                             <i class='bx bx-zoom-in nav-icon'></i>
-                            <span>Saved Searches</span>
-                        </a>
-
-                        <a href="#" class="nav-list" title="Work Flows">
-                             <i class='bx bxs-briefcase-alt-2 nav-icon'></i>
-                            <span>Work Flows</span>
-                        </a>
-
-                        <a href="#" class="nav-list" title="Settings">
-                             <i class='bx bx-cog nav-icon'></i>
-                            <span>Settings</span>
-                        </a>
- 
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <!-- end sidebar section -->
-
-
-        
-    <!-- start right sidebar-->
- 
-    <!--The actual content of the right sidebar-->
-    <div class="sidebar" id="sidebar">
-      
-    <div class="container-liner">
-    <h3> Properties</h3>
-    <span class="close_btn" onclick="toggleSidebar()" ><i  class='bx  bx-x'></i></span>
+        <li class="x y tab" onclick="_tab(this)" style="vertical-align:text-bottom"><center><span class="material-symbols-outlined" style="font-size:30px">space_dashboard</span><br>Dashboard</center></li>
+    </div>
+    <div class="" style="padding-bottom:2px">
+        <input class="g" name="sidebar_tab1" value="1" type="radio" />
+        <li class="x y tab" onclick="_tab(this)"><center><span class="material-symbols-outlined" style="font-size:30px">database</span><br>Repository</center></li>
+    </div>
+    <div class="" style="padding-bottom:2px">
+        <input class="g" name="sidebar_tab1" value="2" type="radio" />
+        <li class="x y tab" onclick="_tab(this)"><center><span class="material-symbols-outlined" style="font-size:30px">calendar_clock</span><br>Recently Viewed</center></li>
+    </div>
+    <div class="" style="padding-bottom:2px">
+        <input class="g" name="sidebar_tab1" value="3" type="radio" />
+        <li class="x y tab" onclick="_tab(this)"><center><span class="material-symbols-outlined" style="font-size:30px">collections_bookmark</span><br>Bookmarks</center></li>
+    </div>
+    <div class="" style="padding-bottom:2px">
+        <input class="g" name="sidebar_tab1" value="4" type="radio" />
+        <li class="x y tab" onclick="_tab(this)"><center><span class="material-symbols-outlined" style="font-size:30px">saved_search</span><br>Saved Searches</center></li>
+    </div>
+    <div class="" style="padding-bottom:2px">
+        <input class="g" name="sidebar_tab1" value="5" type="radio" />
+        <li class="x y tab" onclick="_tab(this)"><center><span class="material-symbols-outlined" style="font-size:30px">flowsheet</span><br>Workflows</center></li>
+    </div>
+    <div class="" style="padding-bottom:2px">
+        <input class="g" name="sidebar_tab1" value="6" type="radio" />
+        <li class="x y tab" onclick="_tab(this)"><center><span class="material-symbols-outlined" style="font-size:30px">settings</span><br>Settings</center></li>
+    </div>
 </div>
-    <div class="sub-sidebar">
+<div class="card elevation-3">
+    <div class="card-header">
+      <h3 class="card-title"><b>HR Policies list View</b></h3>
 
-            <p>Meta Data</p>
-            <p>Index Fields</p>
-            <p>Permissions</p>
-            <p>Automations</p>
-            
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
     </div>
-    
-   
+    <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Document Name</th>
+              <th>Size</th>
+              <th>Modified By</th>
+              <th>Last Modified</th>
+              <th>Index 1</th>
+              <th>Index 2</th>
+            </tr>
+          </thead>
+          <tbody>
+                                                                            <tr>
+                          <td>0.</td>
+                          <td>Document 0</td>
+                          <td>0 Mb</td>
+                          <td>User0</td>
+                          <td>0 min ago</td>
+                          <td>Name 0</td>
+                          <td>ID 0</td>
+                        </tr>
+                                                                                    <tr>
+                          <td>1.</td>
+                          <td>Document 1</td>
+                          <td>1 Mb</td>
+                          <td>User1</td>
+                          <td>1 min ago</td>
+                          <td>Name 1</td>
+                          <td>ID 1</td>
+                        </tr>
+                                                                                    <tr>
+                          <td>2.</td>
+                          <td>Document 2</td>
+                          <td>2 Mb</td>
+                          <td>User2</td>
+                          <td>2 min ago</td>
+                          <td>Name 2</td>
+                          <td>ID 2</td>
+                        </tr>
+                                                                                    <tr>
+                          <td>3.</td>
+                          <td>Document 3</td>
+                          <td>3 Mb</td>
+                          <td>User3</td>
+                          <td>3 min ago</td>
+                          <td>Name 3</td>
+                          <td>ID 3</td>
+                        </tr>
+                                                                                    <tr>
+                          <td>4.</td>
+                          <td>Document 4</td>
+                          <td>4 Mb</td>
+                          <td>User4</td>
+                          <td>4 min ago</td>
+                          <td>Name 4</td>
+                          <td>ID 4</td>
+                        </tr>
+                                                                                    <tr>
+                          <td>5.</td>
+                          <td>Document 5</td>
+                          <td>5 Mb</td>
+                          <td>User5</td>
+                          <td>5 min ago</td>
+                          <td>Name 5</td>
+                          <td>ID 5</td>
+                        </tr>
+                                                                                    <tr>
+                          <td>6.</td>
+                          <td>Document 6</td>
+                          <td>6 Mb</td>
+                          <td>User6</td>
+                          <td>6 min ago</td>
+                          <td>Name 6</td>
+                          <td>ID 6</td>
+                        </tr>
+                                                                                    <tr>
+                          <td>7.</td>
+                          <td>Document 7</td>
+                          <td>7 Mb</td>
+                          <td>User7</td>
+                          <td>7 min ago</td>
+                          <td>Name 7</td>
+                          <td>ID 7</td>
+                        </tr>
+                                                                                    <tr>
+                          <td>8.</td>
+                          <td>Document 8</td>
+                          <td>8 Mb</td>
+                          <td>User8</td>
+                          <td>8 min ago</td>
+                          <td>Name 8</td>
+                          <td>ID 8</td>
+                        </tr>
+                                                                                    <tr>
+                          <td>9.</td>
+                          <td>Document 9</td>
+                          <td>9 Mb</td>
+                          <td>User9</td>
+                          <td>9 min ago</td>
+                          <td>Name 9</td>
+                          <td>ID 9</td>
+                        </tr>
+                                                                      
+          
+          
+          </tbody>
+        </table>
+    <!-- /.card-body -->
+    <div class="card-footer">
+      Footer
     </div>
-    <!-- end right sidebar  -->
-
-
-
-    <!--The actual content of the right sidebar-->
-    <div class="sidebar" id="sidebar2">
-        <div class="container-liner">
-        <h3> Report Properties</h3>
-        <span class="close_btn" onclick="toggleSidebar2()" ><i  class='bx  bx-x'></i></span>
-       
-        </div>
-        </div>
-        <!-- end right sidebar  -->
-
-    <div class="sidebar3">
-        <div class="contents">
-            <a href="#" ><i class='bx bx-user-circle' style="font-size: 2rem;"></i></a>
-            <span><a href="#">
-                <i class="bx bxs-bell" style="font-size: 2rem;"></i>
-            </a></span>
-        </div>
-    </div>
-    
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-         <script src="/assets/script/script.js"></script>
-    </body>
-</html>
+    <!-- /.card-footer-->
+  </div>
+  <!-- /.card -->
+  </div>
